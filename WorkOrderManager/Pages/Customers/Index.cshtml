@@ -15,11 +15,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Customer[0].FirstName)
+                @Html.DisplayNameFor(model => model.Customer[0].FullName) @* @Html.Label(string.Format("Name")) *@
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].PhoneNumbers)
+            </th>
+            @*I'm commenting this out since we're just using the full name attribute
             <th>
                 @Html.DisplayNameFor(model => model.Customer[0].LastName)
             </th>
+            *@
+
+            @* We should add in the ability to see how many cars each customer owns, current unfinished workorders, and a link to their specific work orders.*@
+
             <th></th>
         </tr>
     </thead>
@@ -27,11 +35,16 @@
 @foreach (var item in Model.Customer) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.PhoneNumbers)
             </td>
+
+            @*<td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>*@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.CustomerId">Details</a> |
