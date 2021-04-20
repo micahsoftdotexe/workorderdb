@@ -1,0 +1,67 @@
+@page
+@model WorkOrderManager.Pages.WorkOrders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>WorkOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.CustomerId" class="control-label"></label>
+                <select asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.AutomobileId" class="control-label"></label>
+                <select asp-for="WorkOrder.AutomobileId" class ="form-control" asp-items="ViewBag.AutomobileId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.Date" class="control-label"></label>
+                <input asp-for="WorkOrder.Date" class="form-control" />
+                <span asp-validation-for="WorkOrder.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.Subtotal" class="control-label"></label>
+                <input asp-for="WorkOrder.Subtotal" class="form-control" />
+                <span asp-validation-for="WorkOrder.Subtotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.Tax" class="control-label"></label>
+                <input asp-for="WorkOrder.Tax" class="form-control" />
+                <span asp-validation-for="WorkOrder.Tax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.WorkOrderNotes" class="control-label"></label>
+                <input asp-for="WorkOrder.WorkOrderNotes" class="form-control" />
+                <span asp-validation-for="WorkOrder.WorkOrderNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.AmountPaid" class="control-label"></label>
+                <input asp-for="WorkOrder.AmountPaid" class="form-control" />
+                <span asp-validation-for="WorkOrder.AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrder.PaidInFull" class="control-label"></label>
+                <input asp-for="WorkOrder.PaidInFull" class="form-control" />
+                <span asp-validation-for="WorkOrder.PaidInFull" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -3,6 +3,9 @@
 
 -- tables
 -- Table: Address
+-- Create a new database called 'DatabaseName'
+-- Connect to the 'master' database to run this snippet
+
 CREATE TABLE Address (
     CustomerID int  NOT NULL,
     AddressType int  NOT NULL,
