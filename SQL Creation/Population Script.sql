@@ -38,6 +38,7 @@ insert into Customer(CustomerID, FirstName, LastName) values (5, 'Michael', 'Jen
 insert into Customer(CustomerID, FirstName, LastName) values (6, 'Joseph', 'Dietel');
 SET IDENTITY_INSERT Customer OFF;
 
+insert into PhoneNumber values (1, 1, '8634461056');
 insert into PhoneNumber values (1, 2, '8638000511');
 insert into Address values (1, 2, '900 County Rd 950', null, 'Calhoun', '37309', 'TN');
 insert into Address values (1, 1, '870 County Rd 950', null, 'Calhoun', '37309', 'TN');

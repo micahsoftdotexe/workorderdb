@@ -19,6 +19,7 @@ namespace WorkOrderManager.Pages_Customers
         }
 
         public Customer Customer { get; set; }
+        public PhoneType PhoneType { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,7 +28,16 @@ namespace WorkOrderManager.Pages_Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.CustomerId == id);
+            /*PhoneType = await _context.PhoneTypes
+            .Include(x => x.PhoneType1)
+            .Include(x => x.PhoneDescription)
+            .ToListAsync();*/
+
+            Customer = await _context.Customers
+            .Include(m => m.PhoneNumbers)
+            .Include(m => m.Owns)
+            .Include(m => m.WorkOrders)
+            .FirstOrDefaultAsync(m => m.CustomerId == id);
 
             if (Customer == null)
             {
