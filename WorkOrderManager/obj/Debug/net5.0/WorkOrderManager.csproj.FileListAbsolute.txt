@@ -316,3 +316,8 @@ C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderd
 C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\ref\WorkOrderManager.dll
 C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\WorkOrderManager.pdb
 C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\WorkOrderManager.genruntimeconfig.cache
+C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\Razor\Pages\Automobiles\Create.cshtml.g.cs
+C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\Razor\Pages\Automobiles\Delete.cshtml.g.cs
+C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\Razor\Pages\Automobiles\Details.cshtml.g.cs
+C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\Razor\Pages\Automobiles\Edit.cshtml.g.cs
+C:\Users\Matthew\OneDrive\School\School Winter 2021\Databases\Project\workorderdb\workorderdb\WorkOrderManager\obj\Debug\net5.0\Razor\Pages\Automobiles\Index.cshtml.g.cs

@@ -15629,8 +15629,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Edit.cshtml",
+      "TargetPath": "Pages\\Automobiles\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Create.cshtml",
+      "TargetPath": "Pages\\Automobiles\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15641,6 +15651,11 @@
     {
       "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Customers\\Search.cshtml",
       "TargetPath": "Pages\\Customers\\Search.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Details.cshtml",
+      "TargetPath": "Pages\\Automobiles\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15669,6 +15684,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Index.cshtml",
+      "TargetPath": "Pages\\Automobiles\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\WorkOrders\\Details.cshtml",
       "TargetPath": "Pages\\WorkOrders\\Details.cshtml",
       "FileKind": "mvc"
@@ -15681,6 +15701,11 @@
     {
       "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Privacy.cshtml",
       "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Delete.cshtml",
+      "TargetPath": "Pages\\Automobiles\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
