@@ -34,9 +34,10 @@ namespace WorkOrderManager.Pages_Customers
             .ToListAsync();*/
 
             Customer = await _context.Customers
-            .Include(m => m.PhoneNumbers)
-            .Include(m => m.Owns)
-            .Include(m => m.WorkOrders)
+            .Include(m => m.PhoneNumbers).ThenInclude(y => y.PhoneTypeNavigation)
+            .Include(m => m.Addresses).ThenInclude(y => y.AddressTypeNavigation)
+            .Include(m => m.Owns).ThenInclude(y => y.Automobile)
+            .Include(m => m.WorkOrders).ThenInclude(y => y.Automobile)
             .FirstOrDefaultAsync(m => m.CustomerId == id);
 
             if (Customer == null)
