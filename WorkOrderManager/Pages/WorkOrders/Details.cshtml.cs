@@ -29,7 +29,8 @@ namespace WorkOrderManager.Pages.WorkOrders
 
             WorkOrder = await _context.WorkOrders
                 .Include(w => w.Automobile)
-                .Include(w => w.Customer).FirstOrDefaultAsync(m => m.WorkOrderId == id);
+                .Include(w => w.Customer)
+                .Include(w=> w.Parts).FirstOrDefaultAsync(m => m.WorkOrderId == id);
 
             if (WorkOrder == null)
             {

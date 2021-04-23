@@ -32,11 +32,17 @@
                 @Html.DisplayNameFor(model => model.WorkOrder[0].PaidInFull)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.WorkOrder[0].Automobile)
+                @Html.DisplayNameFor(model => model.WorkOrder[0].Automobile.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrder[0].Automobile.Year)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.WorkOrder[0].Customer)
             </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.WorkOrder[0].Part)
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -65,7 +71,13 @@
                 @Html.DisplayFor(modelItem => item.Automobile.Make)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Automobile.Year)
+            </td>
+            <td>
+                
                 @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                @Html.DisplayFor(modelItem => item.Customer.LastName)
+                
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.WorkOrderId">Edit</a> |

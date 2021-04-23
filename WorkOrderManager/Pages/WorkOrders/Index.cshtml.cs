@@ -25,6 +25,7 @@ namespace WorkOrderManager.Pages.WorkOrders
             WorkOrder = await _context.WorkOrders
                 .Include(w => w.Automobile)
                 .Include(w => w.Customer).ToListAsync();
+                // .Include(w => w.Part).ToListAsync();
         }
     }
 }
