@@ -27,6 +27,7 @@ insert into Automobile(AutomobileID, Vin, Make, Model, Year) values (1, '5UMDU93
 insert into Automobile(AutomobileID, Vin, Make, Model, Year) values (2, 'JAEDJ58V9VWDED5SX', 'Tesla', 'Model 3', 2019);
 insert into Automobile(AutomobileID, Vin, Make, Model, Year) values (3, '1GNEK13Z16J160267', 'Toyota', 'Camry', 2007);
 insert into Automobile(AutomobileID, Vin, Make, Model, Year) values (4, '1G1PG5SB7D7118056', 'Mazda', 'Mazda3', 2014);
+insert into Automobile(AutomobileID, Vin, Make, Model, Year) values (5, 'JAEDJ58V9VWDED5SY', 'Tesla', 'Model Y', 2021);
 SET IDENTITY_INSERT Automobile OFF;
 
 SET IDENTITY_INSERT Customer ON;
@@ -38,10 +39,12 @@ insert into Customer(CustomerID, FirstName, LastName) values (5, 'Michael', 'Jen
 insert into Customer(CustomerID, FirstName, LastName) values (6, 'Joseph', 'Dietel');
 SET IDENTITY_INSERT Customer OFF;
 
+insert into PhoneNumber values (1, 1, '8634461056');
 insert into PhoneNumber values (1, 2, '8638000511');
 insert into Address values (1, 2, '900 County Rd 950', null, 'Calhoun', '37309', 'TN');
 insert into Address values (1, 1, '870 County Rd 950', null, 'Calhoun', '37309', 'TN');
 insert into Owns values (1, 4);
+insert into Owns values (1, 5);
 
 
 insert into PhoneNumber values (2, 2, '2573564291');

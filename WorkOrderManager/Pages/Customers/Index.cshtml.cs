@@ -27,16 +27,21 @@ namespace WorkOrderManager.Pages_Customers
         [BindProperty(SupportsGet = true)]
         public string CustomerName { get; set; }
 
+        public string NumWorkOrders {get; set;}
 
         public async Task OnGetAsync()
         {
+
             if (!string.IsNullOrEmpty(SearchString))
             {
                 Customer = _context.Customers.AsEnumerable()
                 .Where(s => s.FullName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
                 .ToList();
             }else{
-                Customer = await _context.Customers.ToListAsync();
+                Customer = await _context.Customers
+                .Include(w => w.WorkOrders)
+                .Include(w => w.PhoneNumbers)
+                .ToListAsync();
             }
 
         }

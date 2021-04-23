@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WorkOrderManager.Models;
 
-namespace WorkOrderManager.Pages_Customers
+namespace WorkOrderManager.Pages_Automobiles
 {
     public class DetailsModel : PageModel
     {
@@ -18,8 +18,7 @@ namespace WorkOrderManager.Pages_Customers
             _context = context;
         }
 
-        public Customer Customer { get; set; }
-        public PhoneType PhoneType { get; set; }
+        public Automobile Automobile { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,19 +27,12 @@ namespace WorkOrderManager.Pages_Customers
                 return NotFound();
             }
 
-            /*PhoneType = await _context.PhoneTypes
-            .Include(x => x.PhoneType1)
-            .Include(x => x.PhoneDescription)
-            .ToListAsync();*/
+            Automobile = await _context.Automobiles
+            .Include(m => m.Owns).ThenInclude(y => y.Customer)
+            .Include(m => m.WorkOrders)
+            .FirstOrDefaultAsync(m => m.AutomobileId == id);
 
-            Customer = await _context.Customers
-            .Include(m => m.PhoneNumbers).ThenInclude(y => y.PhoneTypeNavigation)
-            .Include(m => m.Addresses).ThenInclude(y => y.AddressTypeNavigation)
-            .Include(m => m.Owns).ThenInclude(y => y.Automobile)
-            .Include(m => m.WorkOrders).ThenInclude(y => y.Automobile)
-            .FirstOrDefaultAsync(m => m.CustomerId == id);
-
-            if (Customer == null)
+            if (Automobile == null)
             {
                 return NotFound();
             }
