@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {}
+    "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {}
   },
   "projects": {
-    "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {
+    "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
+        "projectUniqueName": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
         "projectName": "WorkOrderManager",
-        "projectPath": "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
+        "projectPath": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
         "packagesPath": "/home/micaht/.nuget/packages/",
-        "outputPath": "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/obj/",
+        "outputPath": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/micaht/.nuget/NuGet/NuGet.Config"
@@ -67,12 +67,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

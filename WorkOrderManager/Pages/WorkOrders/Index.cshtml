@@ -1,4 +1,4 @@
-@page
+@page "{nameSearchString?}"
 @model WorkOrderManager.Pages.WorkOrders.IndexModel
 
 @{
@@ -10,6 +10,12 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Name: <input type="text" asp-for="NameSearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

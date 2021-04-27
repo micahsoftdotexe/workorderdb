@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8mlp5oOtT9ow6uEg6sWAI/8Hg+JYtx+mQZ/s2yT9KlJNUDdY5x8CZL3XPKya7YkcpHv2m/8FRizcBB7raN/gEg==",
+  "dgSpecHash": "O8H6V+N5DQLVgI/B9koG4OAkp/Q2MWEqZa3F66ZtKxkOFxUaK6I+rc94W+A4d5HN2jUNHp5/TyEl0CDadh5tew==",
   "success": true,
-  "projectFilePath": "/home/micaht/College Work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
+  "projectFilePath": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
   "expectedPackageFiles": [
     "/home/micaht/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/micaht/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -162,8 +162,7 @@
     "/home/micaht/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/micaht/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/micaht/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/home/micaht/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "/home/micaht/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+    "/home/micaht/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
