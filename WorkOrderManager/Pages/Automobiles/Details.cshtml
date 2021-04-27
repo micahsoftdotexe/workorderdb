@@ -36,15 +36,24 @@
             @Html.DisplayFor(model => model.Automobile.Year)
         </dd>
 
-        @foreach (var item in Model.Automobile.Owns)
-        {
+        @if (Model.Automobile.Owns.Count > 0){
+            
+            @foreach (var item in Model.Automobile.Owns)
+            {
+                <dt class="col-sm-2">
+                    @Html.Label(string.Format("Owner"))
+                </dt>
+                <dd class="col-sm-10">
+                    <a asp-page="/Customers/Details" asp-route-id="@item.CustomerId">@Html.DisplayFor(modelItem => item.Customer.FullName)</a>
+                       
+                </dd>
+            }
+            
+        }else{
             <dt class="col-sm-2">
                 @Html.Label(string.Format("Owner"))
             </dt>
-            <dd class="col-sm-10">
-                <a asp-page="/Customers/Details" asp-route-id="@item.CustomerId">@Html.DisplayFor(modelItem => item.Customer.FullName)</a>
-                
-            </dd>
+            <dd class="col-sm-10">No customer is associated with this vehicle</dd>
         }
 
     </dl>

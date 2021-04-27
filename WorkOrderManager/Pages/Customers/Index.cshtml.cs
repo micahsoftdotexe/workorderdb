@@ -34,8 +34,12 @@ namespace WorkOrderManager.Pages_Customers
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                Customer = _context.Customers.AsEnumerable()
+                Customer = _context.Customers
+                .Include(w => w.WorkOrders)
+                .Include(w => w.PhoneNumbers)
+                .AsEnumerable()
                 .Where(s => s.FullName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
+                
                 .ToList();
             }else{
                 Customer = await _context.Customers
