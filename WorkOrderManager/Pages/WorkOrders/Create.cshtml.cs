@@ -11,6 +11,10 @@ namespace WorkOrderManager.Pages.WorkOrders
 {
     public class CreateModel : PageModel
     {
+        
+        // public List<SelectListItem> Customers { get; set; }
+        // public List<SelectListItem> Automobiles { get; set; }
+
         private readonly WorkOrderManager.Models.WorkOrderContext _context;
 
         public CreateModel(WorkOrderManager.Models.WorkOrderContext context)
@@ -20,8 +24,25 @@ namespace WorkOrderManager.Pages.WorkOrders
 
         public IActionResult OnGet()
         {
-        ViewData["AutomobileId"] = new SelectList(_context.Automobiles, "AutomobileId", "Make");
+
+            // Customers = _context.Customers.Select(a => 
+            //     new SelectListItem 
+            //     {
+            //         Value = a.CustomerId.ToString(),
+            //         Text =  a.FullName
+            //     }).ToList();
+
+            // Automobiles = _context.Automobiles.Select(a => 
+            //     new SelectListItem 
+            //     {
+            //         Value = a.AutomobileId.ToString(),
+            //         Text =  a.Make
+            //     }).Where().ToList();
+
+        ViewData["AutomobileId"] = new SelectList(_context.Automobiles, "AutomobileId","Make", "Model");
+       
         ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "FirstName");
+        // ViewData[""]
             return Page();
         }
 

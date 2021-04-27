@@ -15649,11 +15649,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Customers\\Search.cshtml",
-      "TargetPath": "Pages\\Customers\\Search.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\Pages\\Automobiles\\Details.cshtml",
       "TargetPath": "Pages\\Automobiles\\Details.cshtml",
       "FileKind": "mvc"

@@ -58,7 +58,18 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WorkOrder.Customer.FirstName)
+            @Html.DisplayFor(model => model.WorkOrder.Customer.LastName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => Model.WorkOrder.Parts)       
+        </dt>
+        @foreach(var item in Model.WorkOrder.Parts){
+            <dd class="col-sm-10">
+                @* @Html.DisplayFor(model => item.PartId) *@
+                @Html.DisplayFor(model => item.PartDescription)
+            </dd>
+        }
+
     </dl>
 </div>
 <div>
