@@ -1,4 +1,4 @@
-@page
+@page "{handler?}"
 @model WorkOrderManager.Pages.WorkOrders.CreateModel
 
 @{
@@ -10,6 +10,8 @@
 <h4>WorkOrder</h4>
 <hr />
 <div class="row">
+
+
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,14 +19,26 @@
             @* <select name="CustomerId" asp-items="Model.Customers"></select>
             <select name="CustomerId" asp-items="Model.Automobiles"></select> *@
 
+            @* <div class="col-lg-1">
+                <form asp-page-handler="edit" method="post">
+                    <button class="btn btn-default">Edit</button>
+                </form> 
+            </div> *@
+            
+            
             <div class="form-group">
+                
                 <label asp-for="WorkOrder.CustomerId" class="control-label"></label>
-                <select asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+                <select id="customer_select" asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+                
             </div>
+            
+
             <div class="form-group">
                 <label asp-for="WorkOrder.AutomobileId" class="control-label"></label>
-                <select asp-for="WorkOrder.AutomobileId" class ="form-control" asp-items="ViewBag.AutomobileId"></select>
+                <select id="automobile_select" asp-for="WorkOrder.AutomobileId" class ="form-control" asp-items="ViewBag.AutomobileId"></select>
             </div>
+
             <div class="form-group">
                 <label asp-for="WorkOrder.Date" class="control-label"></label>
                 <input asp-for="WorkOrder.Date" class="form-control" />
@@ -66,6 +80,27 @@
     <a asp-page="Index">Back to List</a>
 </div>
 
+
+
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+    $(document).ready(function() {
+        $('#customer_select').on('change', function() {
+
+            var CustomerId = $(this).val();
+            $("#automobile_select").empty();
+            $("#automobile_select").append("<option value=''>Select SubCategory</option>");
+            $.getJSON(`?handler=SubCategories&categoryId=${categoryId}`, (data) => {
+                $.each(data, function (i, item) {
+                    $("#automobile_select").append(`<option value="${item.subCategoryId}">${item.subCategoryName}</option>`);
+                });
+            });
+        });
+
+
+    });
+    </script> 
 }

@@ -17,6 +17,8 @@ namespace WorkOrderManager.Pages.WorkOrders
 
         private readonly WorkOrderManager.Models.WorkOrderContext _context;
 
+        public int CustomerId {get; set;}
+
         public CreateModel(WorkOrderManager.Models.WorkOrderContext context)
         {
             _context = context;
@@ -48,6 +50,12 @@ namespace WorkOrderManager.Pages.WorkOrders
 
         [BindProperty]
         public WorkOrder WorkOrder { get; set; }
+
+
+        public JsonResult OnGetSubCategories()
+        {
+            return new JsonResult(_context.Automobiles.Select(a => a.Make));
+        }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
