@@ -21,7 +21,8 @@ namespace WorkOrderManager.Models
         public decimal Tax { get; set; }
         public string WorkOrderNotes { get; set; }
         public decimal AmountPaid { get; set; }
-        public byte[] PaidInFull { get; set; }
+        public bool PaidInFull { get; set; }
+
         public string fullinfo{
             get
             {

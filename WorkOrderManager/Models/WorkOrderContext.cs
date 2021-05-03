@@ -137,7 +137,6 @@ namespace WorkOrderManager.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-
                 entity.Property(e => e.LastName)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -277,11 +276,6 @@ namespace WorkOrderManager.Models
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
-
-                entity.Property(e => e.PaidInFull)
-                    .IsRequired()
-                    .HasMaxLength(1)
-                    .IsFixedLength(true);
 
                 entity.Property(e => e.Subtotal).HasColumnType("decimal(10, 2)");
 
