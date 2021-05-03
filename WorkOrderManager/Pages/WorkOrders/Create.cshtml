@@ -30,7 +30,8 @@
                 
                 <label asp-for="WorkOrder.CustomerId" class="control-label"></label>
                 <select id="customer_select" asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
-                
+                <br>
+                <input placeholder="Filter by name" id = "filter_customers" type="text">
             </div>
             
 
@@ -40,35 +41,46 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="WorkOrder.Date" class="control-label"></label>
+                @Html.Label(string.Format("Date"))
+                @* <label asp-for="WorkOrder.Date" class="control-label"></label> *@
                 <input asp-for="WorkOrder.Date" class="form-control" />
                 <span asp-validation-for="WorkOrder.Date" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="WorkOrder.Subtotal" class="control-label"></label>
-                <input asp-for="WorkOrder.Subtotal" class="form-control" />
-                <span asp-validation-for="WorkOrder.Subtotal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WorkOrder.Tax" class="control-label"></label>
-                <input asp-for="WorkOrder.Tax" class="form-control" />
-                <span asp-validation-for="WorkOrder.Tax" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WorkOrder.WorkOrderNotes" class="control-label"></label>
+                @* <label asp-for="WorkOrder.WorkOrderNotes" class="control-label"></label> *@
+                @Html.Label(string.Format("Notes"))
                 <input asp-for="WorkOrder.WorkOrderNotes" class="form-control" />
                 <span asp-validation-for="WorkOrder.WorkOrderNotes" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="WorkOrder.AmountPaid" class="control-label"></label>
+                <label asp-for="WorkOrder.Subtotal" class="control-label"></label>
+                <input id="subtotal" asp-for="WorkOrder.Subtotal" class="form-control" />
+                <span asp-validation-for="WorkOrder.Subtotal" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WorkOrder.Tax" class="control-label"></label>
+                <input id="tax" asp-for="WorkOrder.Tax" class="form-control" />
+                <span asp-validation-for="WorkOrder.Tax" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                @* <label asp-for="WorkOrder.AmountPaid" class="control-label"></label> *@
+                @Html.Label(string.Format("Amount Paid"))
                 <input asp-for="WorkOrder.AmountPaid" class="form-control" />
                 <span asp-validation-for="WorkOrder.AmountPaid" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
-                <label asp-for="WorkOrder.PaidInFull" class="control-label"></label>
+                @* <label asp-for="WorkOrder.PaidInFull" class="control-label"></label> *@
+                @Html.Label(string.Format("Fully Paid?"))
                 <input asp-for="WorkOrder.PaidInFull" class="form-control" />
                 <span asp-validation-for="WorkOrder.PaidInFull" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -87,20 +99,85 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
     <script>
-    $(document).ready(function() {
-        $('#customer_select').on('change', function() {
 
-            var CustomerId = $(this).val();
-            $("#automobile_select").empty();
-            $("#automobile_select").append("<option value=''>Select SubCategory</option>");
-            $.getJSON(`?handler=SubCategories&categoryId=${categoryId}`, (data) => {
-                $.each(data, function (i, item) {
-                    $("#automobile_select").append(`<option value="${item.subCategoryId}">${item.subCategoryName}</option>`);
+    //jQuery extension method:
+    jQuery.fn.filterByText = function(textbox) {
+        return this.each(function() {
+            var select = this;
+            var options = [];
+            $(select).find('option').each(function() {
+                options.push({
+                    value: $(this).val(),
+                    text: $(this).text()
                 });
             });
+            $(select).data('options', options);
+
+            $(textbox).bind('change keyup', function() {
+                var options = $(select).empty().data('options');
+                var search = $.trim($(this).val());
+                var regex = new RegExp(search, "gi");
+
+                $.each(options, function(i) {
+                    var option = options[i];
+                    if (option.text.match(regex) !== null) {
+                    $(select).append(
+                        $('<option>').text(option.text).val(option.value)
+                    );
+                    }
+                });
+                console.log("updating autos")
+                update_autos();
+            });
+            
+
+        });
+        
+    };
+
+    function update_autos(){
+        var id = $('#customer_select').val();
+        if (id == null){
+            //don't poll server, just remove options from vehicle select
+            document.getElementById('automobile_select').innerHTML = "<option value=''>Select Vehicle</option>";
+        }else{
+            console.log("fetching automobiles for customer: " + id);
+            document.getElementById('automobile_select').innerHTML = "<option value=''>Select Vehicle</option>";
+            fetch(`?handler=SubCategories&CustomerId=${id}`)
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    Array.prototype.forEach.call(data, function (item, i) {
+                        document.getElementById('automobile_select').innerHTML += `<option value="${item.id}">${item.name}</option>`
+                    });
+                });
+        }
+
+    }
+
+
+    $(document).ready(function() {
+
+        $(function() {
+            $('#customer_select').filterByText($('#filter_customers'));
+            
         });
 
 
+
+        $('#subtotal').on('blur', function() {
+            var tax = ($(this).val() * 0.07).toFixed(2);
+            $('#tax').val(tax);
+        });
+
+        update_autos();
+
     });
+
+
+    
     </script> 
 }
