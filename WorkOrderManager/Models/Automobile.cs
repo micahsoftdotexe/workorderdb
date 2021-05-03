@@ -19,6 +19,14 @@ namespace WorkOrderManager.Models
         public string Model { get; set; }
         public short Year { get; set; }
 
+        public string Description { 
+            get
+            {
+                return Convert.ToString(Year) + " " + Make + " " + Model + " " + "VIN: " + Vin;
+            }
+        }
+
+
         public virtual ICollection<Own> Owns { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
