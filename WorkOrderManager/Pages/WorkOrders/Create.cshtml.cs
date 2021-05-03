@@ -54,6 +54,7 @@ namespace WorkOrderManager.Pages.WorkOrders
 
         public JsonResult OnGetSubCategories()
         {
+            Console.WriteLine("test");
             return new JsonResult(_context.Automobiles.Select(a => a.Make));
         }
 

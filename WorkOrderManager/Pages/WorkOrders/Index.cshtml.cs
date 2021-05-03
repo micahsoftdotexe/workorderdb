@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +21,19 @@ namespace WorkOrderManager.Pages.WorkOrders
         }
         public IList<WorkOrder> WorkOrder { get;set; }
         [BindProperty(SupportsGet = true)]
-        public string NameSearchString { get; set; } //Name search string
+        public string fullinfostring { get; set; } //Name search string
         public SelectList Names {get; set;}
         public async Task OnGetAsync()
         {
-            if (!string.IsNullOrEmpty(NameSearchString)){
+            if (!string.IsNullOrEmpty(fullinfostring)){
                 WorkOrder = _context.WorkOrders
                 .Include(w => w.Customer)
+                .ThenInclude(w => w.PhoneNumbers)
+                .Include(w => w.Customer)
+                .ThenInclude(w=> w.Owns)
+                .ThenInclude(w => w.Automobile)
                 .AsEnumerable()
-                .Where(s => s.Customer.FullName.IndexOf(NameSearchString, StringComparison.OrdinalIgnoreCase) != -1)
+                .Where(s =>(( s.fullinfo.IndexOf(fullinfostring, StringComparison.OrdinalIgnoreCase) != -1)))
                 .ToList();
 
             }

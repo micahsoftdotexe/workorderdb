@@ -29,14 +29,17 @@
             <div class="form-group">
                 
                 <label asp-for="WorkOrder.CustomerId" class="control-label"></label>
+                <iframe>
                 <select id="customer_select" asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
-                
+                </iframe>
             </div>
             
 
             <div class="form-group">
                 <label asp-for="WorkOrder.AutomobileId" class="control-label"></label>
+                <iframe>
                 <select id="automobile_select" asp-for="WorkOrder.AutomobileId" class ="form-control" asp-items="ViewBag.AutomobileId"></select>
+                </iframe>
             </div>
 
             <div class="form-group">
@@ -92,7 +95,7 @@
 
             var CustomerId = $(this).val();
             $("#automobile_select").empty();
-            $("#automobile_select").append("<option value=''>Select SubCategory</option>");
+            $("#automobile_select").append("<option value=''>Select Automobile</option>");
             $.getJSON(`?handler=SubCategories&categoryId=${categoryId}`, (data) => {
                 $.each(data, function (i, item) {
                     $("#automobile_select").append(`<option value="${item.subCategoryId}">${item.subCategoryName}</option>`);

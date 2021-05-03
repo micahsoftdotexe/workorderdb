@@ -30,7 +30,7 @@
             @Html.DisplayFor(model => model.WorkOrder.Tax)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WorkOrder.WorkOrderNotes)
+            Work Order Notes
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WorkOrder.WorkOrderNotes)
@@ -64,10 +64,11 @@
             @Html.DisplayNameFor(model => Model.WorkOrder.Parts)       
         </dt>
         @foreach(var item in Model.WorkOrder.Parts){
-            <dd class="col-sm-10">
                 @* @Html.DisplayFor(model => item.PartId) *@
-                @Html.DisplayFor(model => item.PartDescription)
-            </dd>
+            <dd class="col-sm-10">@Html.DisplayFor(model => item.PartDescription)</dd>
+            <dt class="col-sm-2"></dt>
+            @* @Html.DisplayFor(model => item.PartDescription) *@
+            
         }
 
     </dl>
