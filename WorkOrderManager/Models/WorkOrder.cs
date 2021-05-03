@@ -38,6 +38,7 @@ namespace WorkOrderManager.Models
                     //Console.WriteLine("VIN: " + vin.Automobile.Vin);
                     returnvalue += vin.Automobile.Vin + " "; 
                 }
+                returnvalue += WorkOrderNotes;
                 //Console.WriteLine(returnvalue);
                 return returnvalue;
             }

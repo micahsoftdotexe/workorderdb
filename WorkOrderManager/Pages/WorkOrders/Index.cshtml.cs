@@ -22,6 +22,7 @@ namespace WorkOrderManager.Pages.WorkOrders
         public IList<WorkOrder> WorkOrder { get;set; }
         [BindProperty(SupportsGet = true)]
         public string fullinfostring { get; set; } //Name search string
+        public string checkstring {get; set;} // start of checkbox
         public SelectList Names {get; set;}
         public async Task OnGetAsync()
         {
