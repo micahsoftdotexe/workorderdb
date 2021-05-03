@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {}
+    "C:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\WorkOrderManager.csproj": {}
   },
   "projects": {
-    "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj": {
+    "C:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\WorkOrderManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
+        "projectUniqueName": "C:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\WorkOrderManager.csproj",
         "projectName": "WorkOrderManager",
-        "projectPath": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/WorkOrderManager.csproj",
-        "packagesPath": "/home/micaht/.nuget/packages/",
-        "outputPath": "/home/micaht/college_work/DB/workorderdb/WorkOrderManager/obj/",
+        "projectPath": "C:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\WorkOrderManager.csproj",
+        "packagesPath": "C:\\Users\\Matthew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matthew\\OneDrive\\School\\School Winter 2021\\Databases\\Project\\workorderdb\\workorderdb\\WorkOrderManager\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/micaht/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Matthew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
