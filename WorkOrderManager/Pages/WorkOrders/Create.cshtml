@@ -29,7 +29,6 @@
             <div class="form-group">
                 
                 <label asp-for="WorkOrder.CustomerId" class="control-label"></label>
-                <iframe>
                 <select id="customer_select" asp-for="WorkOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
                 <br>
                 <input placeholder="Filter by name" id = "filter_customers" type="text">
@@ -38,9 +37,7 @@
 
             <div class="form-group">
                 <label asp-for="WorkOrder.AutomobileId" class="control-label"></label>
-                <iframe>
                 <select id="automobile_select" asp-for="WorkOrder.AutomobileId" class ="form-control" asp-items="ViewBag.AutomobileId"></select>
-                </iframe>
             </div>
 
             <div class="form-group">
