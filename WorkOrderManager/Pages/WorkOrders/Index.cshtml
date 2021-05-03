@@ -1,4 +1,4 @@
-@page "{nameSearchString?}"
+@page "{fullinfostring?}"
 @model WorkOrderManager.Pages.WorkOrders.IndexModel
 
 @{
@@ -12,7 +12,7 @@
 </p>
 <form>
     <p>
-        Name: <input type="text" asp-for="NameSearchString" />
+        Name: <input type="text" asp-for="fullinfostring" />
         <input type="submit" value="Filter" />
     </p>
 </form>

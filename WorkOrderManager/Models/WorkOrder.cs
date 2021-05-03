@@ -22,6 +22,25 @@ namespace WorkOrderManager.Models
         public string WorkOrderNotes { get; set; }
         public decimal AmountPaid { get; set; }
         public byte[] PaidInFull { get; set; }
+        public string fullinfo{
+            get
+            {
+                //return Customer.FirstName;
+                // firstname,lastname,[PhoneNumbers], [Vin numbers]
+                string returnvalue = "";
+                returnvalue += Customer.FirstName + " " + Customer.LastName + " ";
+                foreach(var num in Customer.PhoneNumbers){
+                    //Console.WriteLine("Phone Number: " + num.PhoneNumber1);
+                    returnvalue += num.PhoneNumber1 + " ";
+                }
+                foreach(var vin in Customer.Owns){
+                    //Console.WriteLine("VIN: " + vin.Automobile.Vin);
+                    returnvalue += vin.Automobile.Vin + " "; 
+                }
+                //Console.WriteLine(returnvalue);
+                return returnvalue;
+            }
+        }
 
         public virtual Automobile Automobile { get; set; }
         public virtual Customer Customer { get; set; }

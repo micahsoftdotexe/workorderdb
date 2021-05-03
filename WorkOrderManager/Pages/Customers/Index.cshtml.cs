@@ -38,9 +38,18 @@ namespace WorkOrderManager.Pages_Customers
                 .Include(w => w.WorkOrders)
                 .Include(w => w.PhoneNumbers)
                 .AsEnumerable()
-                .Where(s => s.FullName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
-                
+                .Where(s => (s.FullName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1))            
                 .ToList();
+
+                // if(Customer.Count == 0){
+                //     //check for phone number number
+                //     Customer = _context.Customers
+                //     .Include(w=>w.WorkOrders)
+                //     .Include(w=>w.PhoneNumbers)
+                //     .AsEnumerable()
+                //     .Where(s => s.PhoneNumbers.PhoneNumber)
+                //     .ToLi
+                //}
             }else{
                 Customer = await _context.Customers
                 .Include(w => w.WorkOrders)
